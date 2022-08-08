@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
         ),
         body: ListView(
           children: [
-            WinNavigation(
+            ExNavigation(
               items: [
-                NavItem(text: '文件', route: 'file'),
-                NavItem(text: '匹配效果', route: 'effect'),
+                ExNavItem(text: '文件', route: 'file'),
+                ExNavItem(text: '匹配效果', route: 'effect'),
               ],
             ),
           ],

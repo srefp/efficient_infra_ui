@@ -3,33 +3,33 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 /// 路由项目
-class NavItem {
+class ExNavItem {
   /// 名称
   String text;
 
   /// 路由
   String route;
 
-  NavItem({
+  ExNavItem({
     required this.text,
     required this.route,
   });
 }
 
 /// windows平台的导航栏
-class WinNavigation extends StatefulWidget {
-  const WinNavigation({
+class ExNavigation extends StatefulWidget {
+  const ExNavigation({
     Key? key,
     required this.items,
   }) : super(key: key);
 
-  final List<NavItem> items;
+  final List<ExNavItem> items;
 
   @override
-  State<WinNavigation> createState() => _WinNavigationState();
+  State<ExNavigation> createState() => _ExNavigationState();
 }
 
-class _WinNavigationState extends State<WinNavigation> {
+class _ExNavigationState extends State<ExNavigation> {
   List<Widget> get tiles => widget.items
       .map((e) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
