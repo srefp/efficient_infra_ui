@@ -78,13 +78,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
-  convert:
-    dependency: transitive
-    description:
-      name: convert
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.2"
   crypto:
     dependency: transitive
     description:
@@ -99,24 +92,10 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
-  dart_des:
-    dependency: transitive
-    description:
-      name: dart_des
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.2"
   efficient_infra_ui:
     dependency: "direct main"
     description:
       path: ".."
-      relative: true
-    source: path
-    version: "0.0.1"
-  efficient_sdk:
-    dependency: transitive
-    description:
-      path: "../../efficient_sdk"
       relative: true
     source: path
     version: "0.0.1"

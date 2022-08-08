@@ -5,7 +5,6 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   bitsdojo_window_windows
   efficient_infra_ui
-  efficient_sdk
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
