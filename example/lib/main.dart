@@ -1,3 +1,4 @@
+import 'package:efficient_infra_ui/explosion/widgets/win_navigation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,10 +18,19 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(""),
+          title: const Text("infra_ui"),
           centerTitle: true,
         ),
-        body: Container(),
+        body: ListView(
+          children: [
+            WinNavigation(
+              items: [
+                NavItem(text: '文件', route: 'file'),
+                NavItem(text: '匹配效果', route: 'effect'),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
