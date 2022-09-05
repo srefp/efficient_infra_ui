@@ -32,13 +32,13 @@ class ExNavigation extends StatefulWidget {
 class _ExNavigationState extends State<ExNavigation> {
   List<Widget> get tiles => widget.items
       .map((e) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: _NavTile(
-            text: e.text,
-            onTap: () {
-              Get.toNamed(e.route);
-            }),
-      ))
+    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+    child: _NavTile(
+        text: e.text,
+        onTap: () {
+          Get.toNamed(e.route);
+        }),
+  ))
       .toList();
 
   @override

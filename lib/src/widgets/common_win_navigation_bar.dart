@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../efficient_infra_ui.dart';
 
 class WinCommonNavigationBar extends StatefulWidget {
@@ -44,7 +45,7 @@ class _WinCommonNavigationBarState extends State<WinCommonNavigationBar> {
       return SizedBox(
         width: widget.width,
         child: Material(
-          color: navItemUnselectedColor,
+          color: Theme.of(context).cardColor,
           child: ListView(
             controller: _scrollController,
             children: [
@@ -65,7 +66,7 @@ class _WinCommonNavigationBarState extends State<WinCommonNavigationBar> {
             ),
             Expanded(
               child: Container(
-                color: navItemUnselectedColor,
+                color: Theme.of(context).cardColor,
               ),
             ),
           ],
@@ -117,6 +118,7 @@ class _NavTile extends StatelessWidget {
     return Ink(
       color: selected ? navItemSelectedColor : navItemUnselectedColor,
       child: InkWell(
+        canRequestFocus: false, // 禁止聚集
         onTap: onTap,
         child: SizedBox(
           width: width,

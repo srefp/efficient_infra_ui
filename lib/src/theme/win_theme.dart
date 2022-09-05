@@ -2,30 +2,30 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-const Color _navItemUnselectedDarkColor = Color(0xFF363636);
-const Color _navItemSelectedDarkColor = Color(0xFF444E55);
-const Color _navItemUnselectedLightColor = Color(0xFFFFFFFF);
-const Color _navItemSelectedLightColor = Color(0xFFC9C9C9);
-const Color _listItemSelectedLightColor = Color(0xFFBABABA);
-const Color _listItemUnSelectedLightColor = Color(0xFFFFFFFF);
-const Color _listItemSelectedDarkColor = Color(0xFF515151);
-const Color _listItemUnSelectedDarkColor = Color(0xFF303133);
+const Color navItemUnselectedDarkColor = Color(0xFF363636);
+const Color navItemSelectedDarkColor = Color(0xFF444E55);
+const Color navItemUnselectedLightColor = Color(0xFFFFFFFF);
+const Color navItemSelectedLightColor = Color(0xFFC9C9C9);
+const Color listItemSelectedLightColor = Color(0xFFBABABA);
+const Color listItemUnSelectedLightColor = Color(0xFFFFFFFF);
+const Color listItemSelectedDarkColor = Color(0xFF515151);
+const Color listItemUnSelectedDarkColor = Color(0xFF303133);
 
 /// 列表项目被选择颜色
 Color get listItemSelectedColor =>
-    Get.isDarkMode ? _listItemSelectedDarkColor : _listItemSelectedLightColor;
+    Get.isDarkMode ? listItemSelectedDarkColor : listItemSelectedLightColor;
 
 /// 列表项目未被选择颜色
 Color get listItemUnSelectedColor =>
-    Get.isDarkMode ? _listItemUnSelectedDarkColor : _listItemUnSelectedLightColor;
+    Get.isDarkMode ? listItemUnSelectedDarkColor : listItemUnSelectedLightColor;
 
 /// 导航栏未选中颜色
 Color get navItemUnselectedColor =>
-    Get.isDarkMode ? _navItemUnselectedDarkColor : _navItemUnselectedLightColor;
+    Get.isDarkMode ? navItemUnselectedDarkColor : navItemUnselectedLightColor;
 
 /// 导航栏选中颜色
 Color get navItemSelectedColor =>
-    Get.isDarkMode ? _navItemSelectedDarkColor : _navItemSelectedLightColor;
+    Get.isDarkMode ? navItemSelectedDarkColor : navItemSelectedLightColor;
 
 WindowButtonColors get buttonColors => Get.isDarkMode
     ? WindowButtonColors(

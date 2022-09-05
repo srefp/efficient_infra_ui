@@ -1,3 +1,4 @@
+import 'package:efficient_infra_ui/efficient_infra_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,7 +9,9 @@ const Color pinkClr = Color(0xFFFF4667);
 const Color white = Colors.white;
 const primaryClr = bluishClr;
 const Color darkGreyClr = Color(0xFF121212);
-const Color darkHeaderClr = Color(0xFF424242);
+const Color darkPrimaryColor = Color(0xFF303030);
+const Color darkSecondaryColor = Color(0xFF424242);
+const Color hintTextDarkColor = Color(0xFF333333);
 
 /// 字体
 String get fontFamily => 'HeiTiSlender';
@@ -18,22 +21,73 @@ const Color lightBlueColor = Color.fromARGB(255, 242, 245, 254);
 
 class Themes {
   static final light = ThemeData(
-      backgroundColor: Colors.white,
-      primaryColor: primaryClr,
-      brightness: Brightness.light);
+    backgroundColor: Colors.white,
+    bottomAppBarColor: Colors.white,
+    cardColor: navItemUnselectedLightColor,
+    primaryColor: primaryClr,
+    toggleableActiveColor: Colors.lightBlueAccent,
+    unselectedWidgetColor: Colors.black,
+    textTheme: TextTheme(
+      headlineMedium: TextStyle(
+        fontSize: 13,
+        color: Colors.lightBlueAccent,
+        fontFamily: fontFamily,
+      ),
+      titleLarge: TextStyle(
+        fontWeight: FontWeight.w900,
+        fontSize: 16,
+        color: hintTextDarkColor,
+        fontFamily: fontFamily,
+      ),
+      titleMedium: TextStyle(
+        fontWeight: FontWeight.w800,
+        fontSize: 13,
+        color: hintTextDarkColor,
+        fontFamily: fontFamily,
+      ),
+    ),
+    brightness: Brightness.light,
+  );
 
-  static final dark =
-      ThemeData(primaryColor: darkGreyClr, brightness: Brightness.dark);
+  static final dark = ThemeData(
+    backgroundColor: darkPrimaryColor,
+    bottomAppBarColor: darkPrimaryColor,
+    cardColor: navItemUnselectedDarkColor,
+    primaryColor: darkGreyClr,
+    toggleableActiveColor: Colors.lightBlueAccent,
+    unselectedWidgetColor: Colors.white,
+    textTheme: TextTheme(
+      headlineMedium: TextStyle(
+        fontSize: 13,
+        color: Colors.white,
+        fontFamily: fontFamily,
+      ),
+      titleLarge: TextStyle(
+        fontWeight: FontWeight.w900,
+        fontSize: 16,
+        color: hintTextDarkColor,
+        fontFamily: fontFamily,
+      ),
+      titleMedium: TextStyle(
+        fontWeight: FontWeight.w800,
+        fontSize: 13,
+        color: hintTextDarkColor,
+        fontFamily: fontFamily,
+      ),
+    ),
+    brightness: Brightness.dark,
+  );
 }
 
 /// 选择按钮的颜色
-Color get selectorColor => Get.isDarkMode ? darkHeaderClr : Colors.white;
+Color get selectorColor => Get.isDarkMode ? darkPrimaryColor : Colors.white;
 
 /// 白色/黑色背景颜色
-Color get whiteBlackBackgroundColor => Get.isDarkMode ? Colors.black : Colors.white;
+Color get whiteBlackBackgroundColor =>
+    Get.isDarkMode ? Colors.black : Colors.white;
 
 /// 白色/灰色背景颜色
-Color get whiteGreyBackgroundColor => Get.isDarkMode ? Color(0xFF424242) : Colors.white;
+Color get whiteGreyBackgroundColor => Get.isDarkMode ? darkPrimaryColor : Colors.white;
 
 /// AppBar颜色
 Color get appBarColor => Get.isDarkMode ? Colors.black : lightBlueColor;

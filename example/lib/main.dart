@@ -1,4 +1,4 @@
-import 'package:efficient_infra_ui/explosion/widgets/win_navigation.dart';
+import 'package:efficient_infra_ui/explosion/widgets/ex_navigation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
