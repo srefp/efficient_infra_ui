@@ -27,17 +27,17 @@ class SearchBar extends StatefulWidget {
   /// 用户输入关键词后，点击键盘的搜索键触发
   final ValueChanged<String>? onSearchSubmit;
 
-  const SearchBar(
-      {Key? key,
-      this.showLocation,
-      this.goBackCallback,
-      this.inputValue = '',
-      this.defaultInputValue = '请输入搜索词',
-      this.onCancel,
-      this.showMap,
-      this.onSearch,
-      this.onSearchSubmit})
-      : super(key: key);
+  const SearchBar({
+    Key? key,
+    this.showLocation,
+    this.goBackCallback,
+    this.inputValue = '',
+    this.defaultInputValue = '请输入搜索词',
+    this.onCancel,
+    this.showMap,
+    this.onSearch,
+    this.onSearchSubmit,
+  }) : super(key: key);
 
   @override
   State<SearchBar> createState() => _SearchBarState();
@@ -70,8 +70,7 @@ class _SearchBarState extends State<SearchBar> {
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: GestureDetector(
-              onTap: () {
-              },
+              onTap: () {},
               child: Row(
                 children: [
                   Icon(
@@ -128,7 +127,7 @@ class _SearchBarState extends State<SearchBar> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(left: -10),
-                hintText: '请输入搜索词',
+                hintText: widget.defaultInputValue,
                 hintStyle: TextStyle(
                   color: Colors.grey,
                   fontSize: 14,
