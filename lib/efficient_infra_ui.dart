@@ -17,6 +17,7 @@ export 'src/input/input_panel.dart';
 export 'src/layout/footer_layout.dart';
 export 'src/list/config_list_view.dart';
 export 'src/list/detail_view.dart';
+export 'src/list/map_list_sliver_list.dart';
 export 'src/platform/platform_scaffold.dart';
 export 'src/platform/windows_area.dart';
 export 'src/qr/qr_code_view.dart';
