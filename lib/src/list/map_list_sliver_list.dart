@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// 适用于Map<String, List<dynamic>类型的列表展示
-class MapListSliverList extends StatelessWidget {
+class MapListSliverList<E> extends StatelessWidget {
   const MapListSliverList({
     Key? key,
     required this.displayMap,
@@ -15,13 +15,13 @@ class MapListSliverList extends StatelessWidget {
   }) : super(key: key);
 
   /// map
-  final Map<String, List<dynamic>> displayMap;
+  final Map<E, List<dynamic>> displayMap;
 
   /// key list
-  final List<String> displayKeyList;
+  final List<E> displayKeyList;
 
   /// key的建造方法
-  final Widget Function(String key) keyBuilder;
+  final Widget Function(E key) keyBuilder;
 
   /// tile的建造方法
   final Widget Function(List<dynamic> list, int index) itemBuilder;
