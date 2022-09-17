@@ -7,6 +7,8 @@ export 'src/bar/search_bar.dart';
 export 'src/bar/title_bar.dart';
 export 'src/button/form_submit_button.dart';
 export 'src/button/prepare_back_leading.dart';
+export 'src/course_table/course.dart';
+export 'src/course_table/course_table.dart';
 export 'src/drawer/common_drawer.dart';
 export 'src/extension/get_extensions.dart';
 export 'src/form/add_view.dart';
