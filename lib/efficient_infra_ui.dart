@@ -30,6 +30,7 @@ export 'src/text/win_text.dart';
 export 'src/theme/theme.dart';
 export 'src/theme/theme_switcher.dart';
 export 'src/theme/win_theme.dart';
+export 'src/tree/tree.dart';
 export 'src/widgets/common_popup_menu_item_row.dart';
 export 'src/win/common_win_navigation_bar.dart';
 export 'src/win/movable_title.dart';
