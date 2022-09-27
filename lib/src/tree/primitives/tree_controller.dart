@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 /// 树状态（节点是否展开）的控制器
 class TreeController {
   bool _allNodesExpanded;

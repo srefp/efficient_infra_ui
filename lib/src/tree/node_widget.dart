@@ -42,8 +42,8 @@ class _NodeWidgetState extends State<NodeWidget> {
 
     var onIconPressed = _isLeaf
         ? null
-        : () => setState(
-            () => widget.state.toggleNodeExpanded(widget.treeNode.id!));
+        : () =>
+            setState(() => widget.state.toggleNodeExpanded(widget.treeNode.id));
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +58,8 @@ class _NodeWidgetState extends State<NodeWidget> {
                 (AllowMultipleGestureRecognizer instance) {
                   instance.onTap = () {
                     setState(() {
-                      rowColor = Color(0xFFF1F2F3);
+                      rowColor =
+                          widget.treeNode.selected ? Color(0xFFF1F2F3) : null;
                     });
                   };
                 },
