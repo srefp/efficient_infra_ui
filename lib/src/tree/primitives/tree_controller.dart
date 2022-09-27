@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 class TreeController {
   bool _allNodesExpanded;
   final Map<Key, bool> _expanded = <Key, bool>{};
+  Key? _selectedRowKey;
 
-  TreeController({allNodesExpanded = true})
-   : _allNodesExpanded = allNodesExpanded;
+  TreeController({allNodesExpanded = true, selectedRowKey})
+      : _allNodesExpanded = allNodesExpanded,
+        _selectedRowKey = selectedRowKey;
 
   bool get allNodesExpanded => _allNodesExpanded;
 
@@ -34,5 +36,9 @@ class TreeController {
 
   void collapseNode(Key key) {
     _expanded[key] = false;
+  }
+
+  void selectRow(Key key) {
+    this._selectedRowKey = key;
   }
 }

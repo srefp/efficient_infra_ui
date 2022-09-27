@@ -1,11 +1,3 @@
-import 'package:efficient_infra_ui/efficient_infra_ui.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-class TreeDemoController extends GetxController {
-  final TreeController treeController = TreeController(allNodesExpanded: false);
-  final currentKey = Rxn<Key>();
-  final TextEditingController textController = TextEditingController(text: '''
 [
   {
     "id": 1,
@@ -47,22 +39,3 @@ class TreeDemoController extends GetxController {
     ]
   }
 ]
-''');
-
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-
-  void onTap(Key value) {
-    currentKey.value = value;
-  }
-}

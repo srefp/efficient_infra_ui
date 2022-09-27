@@ -92,11 +92,11 @@ class _NodeWidgetState extends State<NodeWidget> {
         }),
         if (_isExpanded && !_isLeaf)
           buildNodes(
-            widget.treeNode.children!,
-            widget.indent,
-            widget.state,
-            widget.iconSize,
-            widget.depth + 1,
+            nodes: widget.treeNode.children!,
+            indent: widget.indent,
+            state: widget.state,
+            iconSize: widget.iconSize,
+            depth: widget.depth + 1,
           ),
       ],
     );

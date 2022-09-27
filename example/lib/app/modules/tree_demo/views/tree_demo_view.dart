@@ -35,10 +35,10 @@ class TreeDemoView extends GetView<TreeDemoController> {
                 iconSize: 40,
                 onPressed: controller.update,
               ),
-              Container(
-                child: buildTree(),
-                width: 300,
-              ),
+              // Container(
+              //   child: buildTree(),
+              //   width: 300,
+              // ),
             ],
           ),
         ),
@@ -46,34 +46,43 @@ class TreeDemoView extends GetView<TreeDemoController> {
     );
   }
 
-  /// 根据输入的内容构建树
-  Widget buildTree() {
-    try {
-      var parsedJson = json.decode(controller.textController.text);
-      return TreeView(
-        nodes: toTreeNodes(parsedJson),
-        treeController: controller.treeController,
-      );
-    } on FormatException catch (e) {
-      return Text(e.message);
-    }
-  }
+  // /// 根据输入的内容构建树
+  // Widget buildTree() {
+  //   try {
+  //     var parsedJson = json.decode(controller.textController.text);
+  //     return TreeView(
+  //       nodes: toTreeNodes(parsedJson),
+  //       treeController: controller.treeController,
+  //       onTap: controller.onTap,
+  //     );
+  //   } on FormatException catch (e) {
+  //     return Text(e.message);
+  //   }
+  // }
 
-  List<TreeNode> toTreeNodes(dynamic parsedJson) {
-    if (parsedJson is Map<String, dynamic>) {
-      return parsedJson.keys
-          .map((k) => TreeNode(
-              content: Text('$k:'), children: toTreeNodes(parsedJson[k])))
-          .toList();
-    }
-    if (parsedJson is List<dynamic>) {
-      return parsedJson
-          .asMap()
-          .map((i, element) => MapEntry(i,
-              TreeNode(content: Text('[$i]:'), children: toTreeNodes(element))))
-          .values
-          .toList();
-    }
-    return [TreeNode(content: Text(parsedJson.toString()))];
-  }
+  // List<TreeNode> toTreeNodes(dynamic parsedJson) {
+  //   if (parsedJson is Map<String, dynamic>) {
+  //     return parsedJson.keys
+  //         .map(
+  //           (k) => TreeNode(
+  //             key: ,
+  //             content: Text('$k'),
+  //             children: toTreeNodes(parsedJson[k]),
+  //             onTap: () {
+  //               controller.onTap.call(k);
+  //             }
+  //           ),
+  //         )
+  //         .toList();
+  //   }
+  //   if (parsedJson is List<dynamic>) {
+  //     return parsedJson
+  //         .asMap()
+  //         .map((i, element) => MapEntry(i,
+  //             TreeNode(content: Text('[$i]:'), children: toTreeNodes(element))))
+  //         .values
+  //         .toList();
+  //   }
+  //   return [TreeNode(content: Text(parsedJson.toString()))];
+  // }
 }

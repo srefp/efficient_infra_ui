@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 
 import 'node_widget.dart';
 
-Widget buildNodes(
-  Iterable<TreeNode> nodes,
+Widget buildNodes({
+  required Iterable<TreeNode> nodes,
   double? indent,
-  TreeController state,
+  required TreeController state,
   double? iconSize,
-  int depth,
-) {
+  required int depth,
+}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [

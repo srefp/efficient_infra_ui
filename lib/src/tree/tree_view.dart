@@ -18,13 +18,17 @@ class TreeView extends StatefulWidget {
   /// 管理树状态的控制器
   final TreeController? treeController;
 
+  final ValueChanged<Key> onTap;
+
   TreeView({
     Key? key,
     required List<TreeNode> nodes,
     this.indent = 14,
     this.iconSize,
     this.treeController,
-  })  : nodes = copyTreeNodes(nodes),
+    required this.onTap,
+    Key? currentKey,
+  })  : nodes = copyTreeNodes(nodes, currentKey, onTap),
         super(key: key);
 
   @override
@@ -43,11 +47,11 @@ class _TreeViewState extends State<TreeView> {
   @override
   Widget build(BuildContext context) {
     return buildNodes(
-      widget.nodes,
-      widget.indent,
-      _controller!,
-      widget.iconSize,
-      1,
+      nodes: widget.nodes,
+      indent: widget.indent,
+      state: _controller!,
+      iconSize: widget.iconSize,
+      depth: 1,
     );
   }
 }
