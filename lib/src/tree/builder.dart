@@ -11,6 +11,7 @@ Widget buildNodes({
   double? iconSize,
   required int depth,
   required int? selectedId,
+  required Color? selectedColor,
 }) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,6 +24,7 @@ Widget buildNodes({
           iconSize: iconSize,
           depth: depth,
           selectedId: selectedId,
+          selectedColor: selectedColor,
         ),
     ],
   );

@@ -4,6 +4,8 @@ import 'package:efficient_infra_ui/src/tree/primitives/tree_node.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+/// 树控件中的一行
+/// TODO: 利用FocusNode完成获取焦点和失去焦点的颜色变化
 class NodeWidget extends StatefulWidget {
   final TreeNode treeNode;
   final double? indent;
@@ -11,6 +13,7 @@ class NodeWidget extends StatefulWidget {
   final TreeController state;
   final int depth;
   final int? selectedId;
+  final Color? selectedColor;
 
   const NodeWidget({
     Key? key,
@@ -20,6 +23,7 @@ class NodeWidget extends StatefulWidget {
     required this.state,
     required this.depth,
     required this.selectedId,
+    required this.selectedColor,
   }) : super(key: key);
 
   @override
@@ -31,8 +35,6 @@ class _NodeWidgetState extends State<NodeWidget> {
       widget.treeNode.children == null || widget.treeNode.children!.isEmpty;
 
   bool get _isExpanded => widget.state.isNodeExpanded(widget.treeNode.id);
-
-  Color? rowColor;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,7 @@ class _NodeWidgetState extends State<NodeWidget> {
             },
             child: Container(
               color: widget.selectedId == widget.treeNode.id
-                  ? Color(0xFFF1F2F3)
+                  ? widget.selectedColor
                   : null,
               width: constraints.maxWidth,
               child: Padding(
@@ -100,6 +102,7 @@ class _NodeWidgetState extends State<NodeWidget> {
             iconSize: widget.iconSize,
             depth: widget.depth + 1,
             selectedId: widget.selectedId,
+            selectedColor: widget.selectedColor,
           ),
       ],
     );
