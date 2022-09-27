@@ -1,10 +1,18 @@
+import 'package:flutter/material.dart';
+
 /// 树状态（节点是否展开）的控制器
 class TreeController {
   bool _allNodesExpanded;
   final Map<int, bool> _expanded = <int, bool>{};
+  final Color? selectedColor;
+  final Color? backgroundColor;
 
-  TreeController({allNodesExpanded = true, selectedRowKey})
-      : _allNodesExpanded = allNodesExpanded;
+  TreeController({
+    allNodesExpanded = true,
+    selectedRowKey,
+    this.selectedColor,
+    this.backgroundColor,
+  }) : _allNodesExpanded = allNodesExpanded;
 
   bool get allNodesExpanded => _allNodesExpanded;
 

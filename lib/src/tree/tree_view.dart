@@ -25,6 +25,8 @@ class TreeView extends StatefulWidget {
 
   final Color? selectedColor;
 
+  final Color? backgroundColor;
+
   TreeView({
     Key? key,
     required List<TreeNode> nodes,
@@ -35,6 +37,7 @@ class TreeView extends StatefulWidget {
     int? currentId,
     required this.selectedId,
     this.selectedColor = const Color(0xFFF1F2F3),
+    this.backgroundColor = Colors.white,
   })  : nodes = copyTreeNodes(nodes, currentId, onTap),
         super(key: key);
 
@@ -47,7 +50,11 @@ class _TreeViewState extends State<TreeView> {
 
   @override
   void initState() {
-    _controller = widget.treeController ?? TreeController();
+    _controller = widget.treeController ??
+        TreeController(
+          selectedColor: widget.selectedColor,
+          backgroundColor: widget.backgroundColor,
+        );
     super.initState();
   }
 
@@ -60,7 +67,6 @@ class _TreeViewState extends State<TreeView> {
       iconSize: widget.iconSize,
       depth: 1,
       selectedId: widget.selectedId,
-      selectedColor: widget.selectedColor,
     );
   }
 }
