@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class TreeNode {
   final List<TreeNode>? children;
   final Widget content;
-  final Key? key;
+  final int id;
   final bool selected;
   final VoidCallback onTap;
 
   TreeNode({
-    this.key,
+    required this.id,
     required this.selected,
     required this.onTap,
     this.children,

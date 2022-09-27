@@ -28,7 +28,7 @@ class _NodeWidgetState extends State<NodeWidget> {
   bool get _isLeaf =>
       widget.treeNode.children == null || widget.treeNode.children!.isEmpty;
 
-  bool get _isExpanded => widget.state.isNodeExpanded(widget.treeNode.key!);
+  bool get _isExpanded => widget.state.isNodeExpanded(widget.treeNode.id);
 
   Color? rowColor;
 
@@ -43,7 +43,7 @@ class _NodeWidgetState extends State<NodeWidget> {
     var onIconPressed = _isLeaf
         ? null
         : () => setState(
-            () => widget.state.toggleNodeExpanded(widget.treeNode.key!));
+            () => widget.state.toggleNodeExpanded(widget.treeNode.id!));
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

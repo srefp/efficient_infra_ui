@@ -5,17 +5,17 @@ import 'package:flutter/material.dart';
 /// 将节点复制到不可修改的列表，分配键并检查是否重复
 List<TreeNode> copyTreeNodes(
   List<TreeNode>? nodes,
-  Key? currentKey,
-  ValueChanged<Key> onTap,
+  int? currentId,
+  ValueChanged<int> onTap,
 ) {
-  return _copyNodesRecursively(nodes, KeyProvider(), currentKey, onTap)!;
+  return _copyNodesRecursively(nodes, KeyProvider(), currentId, onTap)!;
 }
 
 List<TreeNode>? _copyNodesRecursively(
   List<TreeNode>? nodes,
   KeyProvider keyProvider,
-  Key? currentKey,
-  ValueChanged<Key> onTap,
+  int? currentId,
+  ValueChanged<int> onTap,
 ) {
   if (nodes == null) {
     return null;
@@ -23,16 +23,18 @@ List<TreeNode>? _copyNodesRecursively(
   return List.unmodifiable(
     nodes.map(
       (e) => TreeNode(
-        key: keyProvider.key(e.key),
-        selected: keyProvider.key(e.key) == currentKey,
+        id: e.id,
+        selected: e.id == currentId,
         content: e.content,
         children: _copyNodesRecursively(
           e.children,
           keyProvider,
-          currentKey,
+          currentId,
           onTap,
         ),
-        onTap: () {},
+        onTap: () {
+          onTap.call(e.id);
+        },
       ),
     ),
   );

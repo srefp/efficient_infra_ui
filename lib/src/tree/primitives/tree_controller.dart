@@ -3,21 +3,19 @@ import 'package:flutter/material.dart';
 /// 树状态（节点是否展开）的控制器
 class TreeController {
   bool _allNodesExpanded;
-  final Map<Key, bool> _expanded = <Key, bool>{};
-  Key? _selectedRowKey;
+  final Map<int, bool> _expanded = <int, bool>{};
 
   TreeController({allNodesExpanded = true, selectedRowKey})
-      : _allNodesExpanded = allNodesExpanded,
-        _selectedRowKey = selectedRowKey;
+      : _allNodesExpanded = allNodesExpanded;
 
   bool get allNodesExpanded => _allNodesExpanded;
 
-  bool isNodeExpanded(Key key) {
-    return _expanded[key] ?? _allNodesExpanded;
+  bool isNodeExpanded(int id) {
+    return _expanded[id] ?? _allNodesExpanded;
   }
 
-  void toggleNodeExpanded(Key key) {
-    _expanded[key] = !isNodeExpanded(key);
+  void toggleNodeExpanded(int id) {
+    _expanded[id] = !isNodeExpanded(id);
   }
 
   void expandAll() {
@@ -30,15 +28,11 @@ class TreeController {
     _expanded.clear();
   }
 
-  void expandNode(Key key) {
-    _expanded[key] = true;
+  void expandNode(int id) {
+    _expanded[id] = true;
   }
 
-  void collapseNode(Key key) {
-    _expanded[key] = false;
-  }
-
-  void selectRow(Key key) {
-    this._selectedRowKey = key;
+  void collapseNode(int id) {
+    _expanded[id] = false;
   }
 }

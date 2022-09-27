@@ -18,7 +18,8 @@ class TreeView extends StatefulWidget {
   /// 管理树状态的控制器
   final TreeController? treeController;
 
-  final ValueChanged<Key> onTap;
+  /// 点击事件
+  final ValueChanged<int> onTap;
 
   TreeView({
     Key? key,
@@ -27,8 +28,8 @@ class TreeView extends StatefulWidget {
     this.iconSize,
     this.treeController,
     required this.onTap,
-    Key? currentKey,
-  })  : nodes = copyTreeNodes(nodes, currentKey, onTap),
+    int? currentId,
+  })  : nodes = copyTreeNodes(nodes, currentId, onTap),
         super(key: key);
 
   @override
