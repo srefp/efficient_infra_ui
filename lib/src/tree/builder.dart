@@ -10,6 +10,7 @@ Widget buildNodes({
   required TreeController state,
   double? iconSize,
   required int depth,
+  required int? selectedId,
 }) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,6 +22,7 @@ Widget buildNodes({
           state: state,
           iconSize: iconSize,
           depth: depth,
+          selectedId: selectedId,
         ),
     ],
   );

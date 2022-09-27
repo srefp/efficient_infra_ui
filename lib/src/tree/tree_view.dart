@@ -21,6 +21,8 @@ class TreeView extends StatefulWidget {
   /// 点击事件
   final ValueChanged<int> onTap;
 
+  final int? selectedId;
+
   TreeView({
     Key? key,
     required List<TreeNode> nodes,
@@ -29,6 +31,7 @@ class TreeView extends StatefulWidget {
     this.treeController,
     required this.onTap,
     int? currentId,
+    required this.selectedId,
   })  : nodes = copyTreeNodes(nodes, currentId, onTap),
         super(key: key);
 
@@ -53,6 +56,7 @@ class _TreeViewState extends State<TreeView> {
       state: _controller!,
       iconSize: widget.iconSize,
       depth: 1,
+      selectedId: widget.selectedId,
     );
   }
 }

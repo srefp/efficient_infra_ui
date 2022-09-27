@@ -10,6 +10,7 @@ class NodeWidget extends StatefulWidget {
   final double? iconSize;
   final TreeController state;
   final int depth;
+  final int? selectedId;
 
   const NodeWidget({
     Key? key,
@@ -18,6 +19,7 @@ class NodeWidget extends StatefulWidget {
     this.iconSize,
     required this.state,
     required this.depth,
+    required this.selectedId,
   }) : super(key: key);
 
   @override
@@ -63,7 +65,9 @@ class _NodeWidgetState extends State<NodeWidget> {
               )
             },
             child: Container(
-              color: widget.treeNode.selected ? Color(0xFFF1F2F3) : null,
+              color: widget.selectedId == widget.treeNode.id
+                  ? Color(0xFFF1F2F3)
+                  : null,
               width: constraints.maxWidth,
               child: Padding(
                 padding: EdgeInsets.only(left: widget.depth * widget.indent!),
@@ -95,6 +99,7 @@ class _NodeWidgetState extends State<NodeWidget> {
             state: widget.state,
             iconSize: widget.iconSize,
             depth: widget.depth + 1,
+            selectedId: widget.selectedId,
           ),
       ],
     );

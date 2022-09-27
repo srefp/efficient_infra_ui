@@ -24,7 +24,6 @@ List<TreeNode>? _copyNodesRecursively(
     nodes.map(
       (e) => TreeNode(
         id: e.id,
-        selected: e.id == currentId,
         content: e.content,
         children: _copyNodesRecursively(
           e.children,
