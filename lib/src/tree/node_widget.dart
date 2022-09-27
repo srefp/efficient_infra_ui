@@ -57,17 +57,13 @@ class _NodeWidgetState extends State<NodeWidget> {
                 () => AllowMultipleGestureRecognizer(),
                 (AllowMultipleGestureRecognizer instance) {
                   instance.onTap = () {
-                    setState(() {
-                      widget.treeNode.onTap.call();
-                      rowColor =
-                          widget.treeNode.selected ? Color(0xFFF1F2F3) : null;
-                    });
+                    widget.treeNode.onTap.call();
                   };
                 },
               )
             },
             child: Container(
-              color: rowColor,
+              color: widget.treeNode.selected ? Color(0xFFF1F2F3) : null,
               width: constraints.maxWidth,
               child: Padding(
                 padding: EdgeInsets.only(left: widget.depth * widget.indent!),
