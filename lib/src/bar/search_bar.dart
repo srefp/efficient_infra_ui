@@ -166,8 +166,8 @@ class _SearchBarState extends State<SearchBar> {
               ),
             ),
           ),
-        if (widget.showMap != null)
-          CommonImage('assets/icons/widget_search_bar_map.png'),
+        // if (widget.showMap != null)
+        //   CommonImage('assets/icons/widget_search_bar_map.png'),
       ],
     );
   }

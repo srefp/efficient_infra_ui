@@ -1,7 +1,6 @@
 import 'package:efficient_infra_ui/efficient_infra_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 const Color bluishClr = Color(0xFF4E5AE8);
 const Color yellowClr = Color(0xFFFFB746);
@@ -28,23 +27,23 @@ class Themes {
     toggleableActiveColor: Colors.lightBlueAccent,
     unselectedWidgetColor: Colors.black,
     textTheme: TextTheme(
-      headlineMedium: TextStyle(
-        fontSize: 13,
-        color: Colors.lightBlueAccent,
-        fontFamily: fontFamily,
-      ),
-      titleLarge: TextStyle(
-        fontWeight: FontWeight.w900,
-        fontSize: 16,
-        color: hintTextDarkColor,
-        fontFamily: fontFamily,
-      ),
-      titleMedium: TextStyle(
-        fontWeight: FontWeight.w800,
-        fontSize: 13,
-        color: hintTextDarkColor,
-        fontFamily: fontFamily,
-      ),
+      // headlineMedium: TextStyle(
+      //   fontSize: 13,
+      //   color: Colors.lightBlueAccent,
+      //   fontFamily: fontFamily,
+      // ),
+      // titleLarge: TextStyle(
+      //   fontWeight: FontWeight.w900,
+      //   fontSize: 16,
+      //   color: hintTextDarkColor,
+      //   fontFamily: fontFamily,
+      // ),
+      // titleMedium: TextStyle(
+      //   fontWeight: FontWeight.w800,
+      //   fontSize: 13,
+      //   color: hintTextDarkColor,
+      //   fontFamily: fontFamily,
+      // ),
     ),
     brightness: Brightness.light,
   );
@@ -57,23 +56,23 @@ class Themes {
     toggleableActiveColor: Colors.lightBlueAccent,
     unselectedWidgetColor: Colors.white,
     textTheme: TextTheme(
-      headlineMedium: TextStyle(
-        fontSize: 13,
-        color: Colors.white,
-        fontFamily: fontFamily,
-      ),
-      titleLarge: TextStyle(
-        fontWeight: FontWeight.w900,
-        fontSize: 16,
-        color: hintTextDarkColor,
-        fontFamily: fontFamily,
-      ),
-      titleMedium: TextStyle(
-        fontWeight: FontWeight.w800,
-        fontSize: 13,
-        color: hintTextDarkColor,
-        fontFamily: fontFamily,
-      ),
+      // headlineMedium: TextStyle(
+      //   fontSize: 13,
+      //   color: Colors.white,
+      //   fontFamily: fontFamily,
+      // ),
+      // titleLarge: TextStyle(
+      //   fontWeight: FontWeight.w900,
+      //   fontSize: 16,
+      //   color: hintTextDarkColor,
+      //   fontFamily: fontFamily,
+      // ),
+      // titleMedium: TextStyle(
+      //   fontWeight: FontWeight.w800,
+      //   fontSize: 13,
+      //   color: hintTextDarkColor,
+      //   fontFamily: fontFamily,
+      // ),
     ),
     brightness: Brightness.dark,
   );
@@ -160,41 +159,41 @@ TextStyle get hintTextStyle => TextStyle(
       color: Get.isDarkMode ? Colors.grey[400] : Colors.grey[500],
     );
 
-/// 主标题样式
-TextStyle get titleTextStyle => GoogleFonts.lato(
-      textStyle: TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-          color: Get.isDarkMode ? Colors.white : Colors.black),
-    );
-
-/// 副标题样式
-TextStyle get subTitleTextStyle => GoogleFonts.lato(
-      textStyle: TextStyle(
-          fontSize: 16,
-          color: Get.isDarkMode ? Colors.grey[400] : Colors.grey[700]),
-    );
-
-TextStyle get subHeadingStyle => GoogleFonts.lato(
-    textStyle: TextStyle(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: Get.isDarkMode ? Colors.grey[400] : Colors.grey));
-
-TextStyle get headingStyle => GoogleFonts.lato(
-    textStyle: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-        color: Get.isDarkMode ? Colors.white : Colors.black));
-
-TextStyle get titleStyle => GoogleFonts.lato(
-    textStyle: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w400,
-        color: Get.isDarkMode ? Colors.white : Colors.black));
-
-TextStyle get subTitleStyle => GoogleFonts.lato(
-    textStyle: TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-        color: Get.isDarkMode ? Colors.grey[100] : Colors.grey[600]));
+// /// 主标题样式
+// TextStyle get titleTextStyle => GoogleFonts.lato(
+//       textStyle: TextStyle(
+//           fontSize: 30,
+//           fontWeight: FontWeight.bold,
+//           color: Get.isDarkMode ? Colors.white : Colors.black),
+//     );
+//
+// /// 副标题样式
+// TextStyle get subTitleTextStyle => GoogleFonts.lato(
+//       textStyle: TextStyle(
+//           fontSize: 16,
+//           color: Get.isDarkMode ? Colors.grey[400] : Colors.grey[700]),
+//     );
+//
+// TextStyle get subHeadingStyle => GoogleFonts.lato(
+//     textStyle: TextStyle(
+//         fontSize: 24,
+//         fontWeight: FontWeight.bold,
+//         color: Get.isDarkMode ? Colors.grey[400] : Colors.grey));
+//
+// TextStyle get headingStyle => GoogleFonts.lato(
+//     textStyle: TextStyle(
+//         fontSize: 30,
+//         fontWeight: FontWeight.bold,
+//         color: Get.isDarkMode ? Colors.white : Colors.black));
+//
+// TextStyle get titleStyle => GoogleFonts.lato(
+//     textStyle: TextStyle(
+//         fontSize: 16,
+//         fontWeight: FontWeight.w400,
+//         color: Get.isDarkMode ? Colors.white : Colors.black));
+//
+// TextStyle get subTitleStyle => GoogleFonts.lato(
+//     textStyle: TextStyle(
+//         fontSize: 14,
+//         fontWeight: FontWeight.w400,
+//         color: Get.isDarkMode ? Colors.grey[100] : Colors.grey[600]));

@@ -10,8 +10,8 @@ Widget? prepareBackLeading(
   final bool canPop = parentRoute?.canPop ?? false;
   Widget? leading = canPop
       ? Tooltip(
-          richMessage:
-              TextSpan(text: '返回', style: TextStyle(fontFamily: fontFamily)),
+          message: '返回',
+          textStyle: TextStyle(fontFamily: fontFamily),
           child: IconButton(
             onPressed: onPressed,
             icon: Icon(

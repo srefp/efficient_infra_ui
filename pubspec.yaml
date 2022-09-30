@@ -9,11 +9,11 @@ environment:
 dependencies:
   get: ^4.5.1
   get_storage: ^2.0.3
-  google_fonts: ^2.2.0
+#  google_fonts: ^2.3.0
   bitsdojo_window: ^0.1.0
   flutter_svg: ^1.0.0
   fl_chart: ^0.55.1
-#  flutter_advanced_networkimage_2: ^1.0.0
+#  flutter_advanced_networkimage_2: ^2.0.1
 #  qr_code_scanner: ^0.0.1
   plugin_platform_interface: ^2.1.2
   flutter:
