@@ -82,12 +82,17 @@ class Themes {
 /// 选择按钮的颜色
 Color get selectorColor => Get.isDarkMode ? darkPrimaryColor : Colors.white;
 
+/// 课程表颜色
+Color get courseBackgroundColor =>
+    Get.isDarkMode ? Colors.black : Color(0xFFF2F5FA);
+
 /// 白色/黑色背景颜色
 Color get whiteBlackBackgroundColor =>
     Get.isDarkMode ? Colors.black : Colors.white;
 
 /// 白色/灰色背景颜色
-Color get whiteGreyBackgroundColor => Get.isDarkMode ? darkPrimaryColor : Colors.white;
+Color get whiteGreyBackgroundColor =>
+    Get.isDarkMode ? darkPrimaryColor : Colors.white;
 
 /// AppBar颜色
 Color get appBarColor => Get.isDarkMode ? Colors.black : lightBlueColor;

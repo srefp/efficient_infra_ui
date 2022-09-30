@@ -1,8 +1,9 @@
 import 'package:efficient_infra_ui/src/course_table/course.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 const titleColor = Color(0xFFFDFDFD);
+
+typedef RowColumnEvent = void Function(int row, int column);
 
 class CourseTable extends StatefulWidget {
   const CourseTable({
@@ -13,7 +14,7 @@ class CourseTable extends StatefulWidget {
     required this.mondayDate,
     required this.currentWeek,
     required this.courses,
-    required this.addRoute,
+    required this.controller,
     this.halfSectionNum = 6,
     this.titleWidth = 20,
     this.titleHeight = 50,
@@ -65,10 +66,11 @@ class CourseTable extends StatefulWidget {
   /// 月份
   final String month;
 
-  /// 添加页面的路由
-  final String addRoute;
-
+  /// 课程数据
   final List<Course> courses;
+
+  /// tile控制器
+  final CourseTileController controller;
 
   final BoxDecoration titleDecoration;
   final BoxDecoration outerGridDecoration;
@@ -88,18 +90,23 @@ class _CourseTableState extends State<CourseTable> {
 
     final innerWidget = course == null
         ? _EmptyTile(
-            route: widget.addRoute,
             row: row,
             column: column,
             tappedRow: tappedRow,
             tappedColumn: tappedColumn,
-            callback: (int row, int column) {
+            onTap: (int row, int column) {
               setState(() {
                 tappedRow = row;
                 tappedColumn = column;
               });
-            })
+            },
+            controller: widget.controller,
+          )
         : Container(
+            constraints: BoxConstraints(
+              minWidth: double.infinity,
+              minHeight: double.infinity,
+            ),
             child: Text(
               course.name + "@" + course.room,
               style: TextStyle(
@@ -108,8 +115,8 @@ class _CourseTableState extends State<CourseTable> {
               ),
             ),
             decoration: widget.innerGridDecoration,
-            margin: EdgeInsets.all(3.0),
-            padding: EdgeInsets.all(2.0),
+            margin: EdgeInsets.all(2),
+            padding: EdgeInsets.all(2),
           );
 
     return Container(
@@ -260,23 +267,31 @@ class _CourseTableState extends State<CourseTable> {
   }
 }
 
+class CourseTileController {
+  final RowColumnEvent addEvent;
+
+  CourseTileController({
+    required this.addEvent,
+  });
+}
+
 class _EmptyTile extends StatefulWidget {
   const _EmptyTile({
     Key? key,
-    required this.route,
     required this.row,
     required this.column,
     required this.tappedRow,
     required this.tappedColumn,
-    required this.callback,
+    required this.onTap,
+    required this.controller,
   }) : super(key: key);
 
-  final String route;
   final int row;
   final int column;
   final int? tappedRow;
   final int? tappedColumn;
-  final void Function(int, int) callback;
+  final RowColumnEvent onTap;
+  final CourseTileController controller;
 
   @override
   State<_EmptyTile> createState() => _EmptyTileState();
@@ -291,13 +306,10 @@ class _EmptyTileState extends State<_EmptyTile> {
         widget.tappedColumn == widget.column;
     return GestureDetector(
       onTap: () {
-        widget.callback.call(widget.row, widget.column);
+        widget.onTap.call(widget.row, widget.column);
         setState(() {
           if (_isTapped) {
-            Get.toNamed(
-              widget.route,
-              arguments: {'dayOfWeek': widget.row, 'section': widget.column},
-            );
+            widget.controller.addEvent.call(widget.row, widget.column);
           }
         });
       },

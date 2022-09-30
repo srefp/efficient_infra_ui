@@ -33,7 +33,6 @@ class MapListSliverList<E> extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        childCount: displayKeyList.length,
         (context, index) {
           final key = displayKeyList[index];
           final list = displayMap[key]!;
@@ -52,6 +51,7 @@ class MapListSliverList<E> extends StatelessWidget {
             ],
           );
         },
+        childCount: displayKeyList.length,
       ),
     );
   }

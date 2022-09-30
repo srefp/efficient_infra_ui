@@ -1,4 +1,4 @@
-package com.sr.efficient_infra_ui_example
+package com.sr.example
 
 import io.flutter.embedding.android.FlutterActivity
 
