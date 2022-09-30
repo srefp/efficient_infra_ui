@@ -6,8 +6,8 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  cupertino_icons: ^1.0.2
-  get: 4.5.1
+  cupertino_icons: ^1.0.5
+  get: ^4.6.5
   flutter:
     sdk: flutter
   efficient_infra_ui:
